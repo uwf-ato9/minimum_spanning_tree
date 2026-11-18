@@ -155,7 +155,7 @@ extern "C" int main(void)
     {
         uint32_t UIndex = Vertices[VertexIndex];
         uint32_t VIndex = Vertices[(uint32_t)rand() % VertexIndex];
-        Edges[WriteIndex++] = {UIndex, VIndex, 1};
+        Edges[WriteIndex++] = {UIndex, VIndex, ((uint32_t)rand() % 10) + 1};
     }
 
     while(WriteIndex < EdgeCount)
@@ -165,7 +165,7 @@ extern "C" int main(void)
         if((UIndex != VIndex) &&
            !HasEdge(WriteIndex, Edges, UIndex, VIndex))
         {
-            Edges[WriteIndex++] = {UIndex, VIndex, 1};
+            Edges[WriteIndex++] = {UIndex, VIndex, ((uint32_t)rand() % 10) + 1};
         }
     }
 
